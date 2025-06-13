@@ -1,4 +1,6 @@
-[gd_scene load_steps=4 format=3 uid="uid://c8hq5j1dvfcw4"]
+[gd_scene load_steps=5 format=3 uid="uid://c8hq5j1dvfcw4"]
+
+[ext_resource type="Script" uid="uid://d33avgelibr4e" path="res://rigid_body_3d_node.gd" id="1_o4qon"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_idrrp"]
 
@@ -11,6 +13,7 @@ size = Vector3(2.80371, 0.200928, 2.5332)
 
 [node name="RigidBody3D_node" type="RigidBody3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.27765, 0)
+script = ExtResource("1_o4qon")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody3D_node"]
 shape = SubResource("BoxShape3D_idrrp")
