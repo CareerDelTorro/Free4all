@@ -23,3 +23,6 @@ shape = SubResource("BoxShape3D_idrrp")
 [node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D_node_floor"]
 transform = Transform3D(2.71568, 0, 0, 0, 0.172475, 0, 0, 0, 2.45566, 0, 0, 0)
 mesh = SubResource("BoxMesh_idrrp")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(0.64393, -0.426683, 0.635055, -0.0101118, 0.825228, 0.56471, -0.765017, -0.370055, 0.527075, 1.54665, 1.59629, 1.70118)
