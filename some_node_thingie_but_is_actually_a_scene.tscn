@@ -26,3 +26,5 @@ mesh = SubResource("BoxMesh_idrrp")
 
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(0.64393, -0.426683, 0.635055, -0.0101118, 0.825228, 0.56471, -0.765017, -0.370055, 0.527075, 1.54665, 1.59629, 1.70118)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
