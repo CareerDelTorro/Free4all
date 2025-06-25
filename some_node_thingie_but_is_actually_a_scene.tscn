@@ -1,36 +1,26 @@
-[gd_scene load_steps=5 format=3 uid="uid://c8hq5j1dvfcw4"]
+[gd_scene load_steps=6 format=3 uid="uid://b7qxt3tu7aeat"]
 
-[ext_resource type="Script" uid="uid://d33avgelibr4e" path="res://rigid_body_3d_node.gd" id="1_o4qon"]
+[ext_resource type="Texture2D" uid="uid://ca4tqra3bq63f" path="res://assets/terrain_tile_sprites.png" id="1_i6jdt"]
+[ext_resource type="Script" uid="uid://d1236yfm61sjl" path="res://tile_map_layer.gd" id="1_o4qon"]
+[ext_resource type="Script" uid="uid://dlxhk8cb0fpmu" path="res://camera_2d.gd" id="3_x081u"]
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_idrrp"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_x081u"]
+texture = ExtResource("1_i6jdt")
+0:0/0 = 0
+0:1/0 = 0
+0:2/0 = 0
+0:3/0 = 0
+0:4/0 = 0
 
-[sub_resource type="BoxMesh" id="BoxMesh_idrrp"]
+[sub_resource type="TileSet" id="TileSet_o4qon"]
+sources/0 = SubResource("TileSetAtlasSource_x081u")
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_o4qon"]
-size = Vector3(2.80371, 0.200928, 2.5332)
+[node name="Node2D" type="Node2D"]
 
-[node name="some_node_thingie_but_is_actually_a_scene" type="Node3D"]
-
-[node name="RigidBody3D_node" type="RigidBody3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.27765, 0)
+[node name="TileMapLayer" type="TileMapLayer" parent="."]
+tile_set = SubResource("TileSet_o4qon")
 script = ExtResource("1_o4qon")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody3D_node"]
-shape = SubResource("BoxShape3D_idrrp")
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="RigidBody3D_node"]
-mesh = SubResource("BoxMesh_idrrp")
-
-[node name="StaticBody3D_node_floor" type="StaticBody3D" parent="."]
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D_node_floor"]
-transform = Transform3D(2.71568, 0, 0, 0, 0.172475, 0, 0, 0, 2.45566, 0, 0, 0)
-mesh = SubResource("BoxMesh_idrrp")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D_node_floor"]
-shape = SubResource("BoxShape3D_o4qon")
-
-[node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(0.64393, -0.426683, 0.635055, -0.0101118, 0.825228, 0.56471, -0.765017, -0.370055, 0.527075, 1.54665, 1.59629, 1.70118)
-
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+[node name="Camera2D" type="Camera2D" parent="." node_paths=PackedStringArray("tilemap_layer")]
+script = ExtResource("3_x081u")
+tilemap_layer = NodePath("../TileMapLayer")
