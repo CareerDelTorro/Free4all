@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b2251fhhcbe02"
-path="res://.godot/imported/terrain_tile_sprites.png-c7d3c5af1c1ecf19144cf50d274eaef7.ctex"
+uid="uid://1rvso3nrpjd8"
+path="res://.godot/imported/terrain_tile_sprites_x5_5.png-47530f7bd3fb8f1e1cfc0580539d6d1d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/terrain_tile_sprites.png"
-dest_files=["res://.godot/imported/terrain_tile_sprites.png-c7d3c5af1c1ecf19144cf50d274eaef7.ctex"]
+source_file="res://assets/terrain_tile_sprites_x5_5.png"
+dest_files=["res://.godot/imported/terrain_tile_sprites_x5_5.png-47530f7bd3fb8f1e1cfc0580539d6d1d.ctex"]
 
 [params]
 

@@ -1,0 +1,67 @@
+[gd_scene load_steps=9 format=3 uid="uid://dfdum3y48mpxy"]
+
+[ext_resource type="Script" uid="uid://c6du2a6jtq23i" path="res://src/main/main.gd" id="1_jqarl"]
+[ext_resource type="Texture2D" uid="uid://b5574rt7eunde" path="res://assets/terrain_tile_sprites_x5_7.png" id="2_jqarl"]
+[ext_resource type="Script" uid="uid://d1236yfm61sjl" path="res://src/main/tile_map_layer.gd" id="2_tefeu"]
+[ext_resource type="Script" uid="uid://dlxhk8cb0fpmu" path="res://src/main/camera_2d.gd" id="3_o6xl0"]
+[ext_resource type="Script" uid="uid://dpctaxi0rfej3" path="res://src/main/unit_spawner.gd" id="4_tipki"]
+[ext_resource type="PackedScene" uid="uid://b2f6jp6t17q3y" path="res://src/unit/unit.tscn" id="5_85g3d"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_x081u"]
+texture = ExtResource("2_jqarl")
+0:0/0 = 0
+0:1/0 = 0
+0:2/0 = 0
+0:3/0 = 0
+0:4/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+4:0/0 = 0
+5:0/0 = 0
+6:0/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+3:1/0 = 0
+4:1/0 = 0
+5:1/0 = 0
+6:1/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+3:2/0 = 0
+4:2/0 = 0
+5:2/0 = 0
+6:2/0 = 0
+1:3/0 = 0
+2:3/0 = 0
+3:3/0 = 0
+4:3/0 = 0
+5:3/0 = 0
+6:3/0 = 0
+1:4/0 = 0
+2:4/0 = 0
+3:4/0 = 0
+4:4/0 = 0
+5:4/0 = 0
+6:4/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_o4qon"]
+sources/0 = SubResource("TileSetAtlasSource_x081u")
+
+[node name="root" type="Node2D"]
+script = ExtResource("1_jqarl")
+
+[node name="tile_map_layer" type="TileMapLayer" parent="."]
+tile_set = SubResource("TileSet_o4qon")
+script = ExtResource("2_tefeu")
+
+[node name="camera_2d" type="Camera2D" parent="."]
+script = ExtResource("3_o6xl0")
+
+[node name="unit_spawner" type="Node2D" parent="." node_paths=PackedStringArray("camera", "tilemap_layer")]
+script = ExtResource("4_tipki")
+unit_scene = ExtResource("5_85g3d")
+camera = NodePath("../camera_2d")
+tilemap_layer = NodePath("../tile_map_layer")
+
+[node name="ui" type="CanvasLayer" parent="."]

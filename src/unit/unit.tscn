@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://b2f6jp6t17q3y"]
+
+[ext_resource type="Script" uid="uid://nhwahtnmnrxo" path="res://src/unit/unit_body_2d.gd" id="1_o7ajc"]
+[ext_resource type="Script" uid="uid://c5mmmcu4turtg" path="res://src/unit/unit_texture.gd" id="2_k673f"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_65pwm"]
+
+[node name="unit" type="Node2D"]
+
+[node name="unit_body_2d" type="CharacterBody2D" parent="."]
+script = ExtResource("1_o7ajc")
+
+[node name="unit_texture" type="Node2D" parent="unit_body_2d"]
+script = ExtResource("2_k673f")
+
+[node name="unit_collider" type="CollisionShape2D" parent="unit_body_2d"]
+shape = SubResource("CircleShape2D_65pwm")
+
+[node name="line_to_target" type="Line2D" parent="unit_body_2d"]
+width = 2.0
+default_color = Color(0.683687, 0.500469, 1.92523e-07, 0.639216)
